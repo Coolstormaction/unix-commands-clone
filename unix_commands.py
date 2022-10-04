@@ -1,7 +1,7 @@
 import os, animation, termcolor
 import socket
 from rich import print
-from rich.console import Console 
+from rich.console import Console
 import time
 import datetime
 from colorama import Fore
@@ -22,8 +22,12 @@ year = now.strftime("%Y")
 date = day + "-" + month + "-" + year
 time = datetime.datetime.now().strftime("%H:%M")
 animation.animate()
+
 while True:
-    console.print(f"[bold][chartreuse1]{user}@{name}[/] [magenta2]UNIX[/] [gold1]~{'/' + path}[/]\n$[/]", end='')
+    console.print(
+        f"[bold][chartreuse1]{user}@{name}[/] [magenta2]UNIX[/] [gold1]~{'/' + path}[/]\n$[/]",
+        end="",
+    )
     command = input(" ")
     if command.startswith("touch"):
         file = command.split()
@@ -52,7 +56,7 @@ while True:
         table.add_column("Name", style="dark_slate_gray1")
         table.add_row("-a----", f"{str(date)}\t{str(time)}", "", file[1])
         console.print(table)
-        
+
     if command == commands[2]:
         listDir = os.listdir()
         for i in listDir:
@@ -60,9 +64,10 @@ while True:
             if ifDir:
                 index = listDir.index(i)
                 listDir[index] = termcolor.colored(f"{listDir[index]}/", "green")
-            else: console.print("unix: mkdir: file doesn't exist")
-        print('  '.join(listDir))
-    
+            else:
+                console.print("unix: mkdir: file doesn't exist")
+        print("  ".join(listDir))
+
     if command.startswith("cat"):
         file = command.split()
         with open(file[1], "r") as f:
@@ -72,30 +77,37 @@ while True:
     if command.startswith("cp"):
         file = command.split()
         length = file.__len__()
-        if length == 1: console.print("[magenta2]unix: [gold1]cp: missing file operand")
-        if length == 2: console.print("[magenta2]unix: [gold1]cp: missing file to copy content")
+        if length == 1:
+            console.print("[magenta2]unix: [gold1]cp: missing file operand")
+        if length == 2:
+            console.print("[magenta2]unix: [gold1]cp: missing file to copy content")
         else:
             with open(file[1], "r") as f:
                 content = f.read()
-            with open(file[2], 'a') as q:
+            with open(file[2], "a") as q:
                 q.write(f"\n{content}")
 
     if command.startswith("del"):
         file = command.split()
         length = file.__len__()
-        if length == 1: console.print("[magenta2]unix: [gold1]del: missing file operand")
-        else: os.remove(file[1])
+        if length == 1:
+            console.print("[magenta2]unix: [gold1]del: missing file operand")
+        else:
+            os.remove(file[1])
 
-    if command.startswith('mv'):
+    if command.startswith("mv"):
         file = command.split()
         length = file.__len__()
-        if length == 1: console.print("[magenta2]unix: [gold1]mv: missing file operand")
-        if length == 2: console.print("[magenta2]unix: [gold1]mv: missing file to move content")
+        if length == 1:
+            console.print("[magenta2]unix: [gold1]mv: missing file operand")
+        if length == 2:
+            console.print("[magenta2]unix: [gold1]mv: missing file to move content")
         else:
             try:
                 with open(file[1], "r") as f:
                     content = f.read()
-                with open(file[2], 'a') as q:
+                with open(file[2], "a") as q:
                     q.write(f"\n{content}")
                 os.remove(file[1])
-            except: ...
+            except:
+                ...
