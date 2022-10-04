@@ -19,3 +19,6 @@ cat - Shows a file's content
 cp - Copies one file's content to the other
 
 # More updates coming soon!
+
+# License
+MIT, see LICENSE for details.
