@@ -19,6 +19,6 @@ Current commands are
 `cp` - Copies one file's content to the other\
 
 # License
-MIT, see [LICENSE](https://github.com/Coolstormaction/unix-commands-clone/blob/main/README.md](https://github.com/Coolstormaction/unix-commands-clone/blob/main/LICENSE) for details.
+MIT, see [LICENSE](https://github.com/Coolstormaction/unix-commands-clone/blob/main/LICENSE) for details.
 
 # More updates coming soon!
