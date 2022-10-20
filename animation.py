@@ -19,4 +19,4 @@ def animate():
     for text in textF:
         console.log(text, style='bold cyan')
         time.sleep(1)
-    os.system("cls")
+    os.system("cls" if os.name == 'nt' else 'clear')
