@@ -6,19 +6,19 @@ Entirely written in python and styling is with the rich module
 # Commands
 
 Current commands are 
-ls, del, mv, mkdir, touch, cat, cp
+`ls` `del` `mv` `mkdir` `touch` `cat` `cp`
 
 # Usage
 
-ls - Lists directory
-del - Deletes a file
-mv - Moves one file's content to other
-mkdir - Creates a new directory
-touch - Creates a new file
-cat - Shows a file's content
-cp - Copies one file's content to the other
+`ls` - Lists directory\
+`del` - Deletes a file\
+`mv` - Moves one file's content to other\
+`mkdir` - Creates a new directory\
+`touch` - Creates a new file\
+`cat` - Shows a file's content\
+`cp` - Copies one file's content to the other\
 
 # License
-MIT, see LICENSE for details.
+MIT, see [LICENSE](https://github.com/Coolstormaction/unix-commands-clone/blob/main/README.md) for details.
 
 # More updates coming soon!
