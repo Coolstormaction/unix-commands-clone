@@ -3,7 +3,7 @@ import socket
 from rich import print
 from rich.console import Console
 import time
-import datetime
+import datetime, getpass
 from colorama import Fore
 from rich.table import Table
 from rich.syntax import Syntax
@@ -12,7 +12,7 @@ console = Console()
 commands = ["touch", "mkdir", "ls", "cat"]
 path = os.getcwd()
 name = socket.gethostname()
-user = os.getlogin()
+user = getpass.getuser()
 path = path.replace("\\", "/")
 path = path.removeprefix("C:/Users/DEBARKA NASKAR/")
 now = datetime.datetime.now()
