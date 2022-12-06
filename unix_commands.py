@@ -1,3 +1,5 @@
+# Imports
+
 import os, animation, termcolor
 import socket
 from rich import print
