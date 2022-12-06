@@ -23,7 +23,7 @@ month = now.strftime("%m")
 year = now.strftime("%Y")
 date = day + "-" + month + "-" + year
 time = datetime.datetime.now().strftime("%H:%M")
-# animation.animate()
+animation.animate()
 
 while True:
     console.print(
