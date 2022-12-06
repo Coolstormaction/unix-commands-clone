@@ -23,7 +23,7 @@ month = now.strftime("%m")
 year = now.strftime("%Y")
 date = day + "-" + month + "-" + year
 time = datetime.datetime.now().strftime("%H:%M")
-animation.animate()
+# animation.animate()
 
 while True:
     console.print(
@@ -59,17 +59,16 @@ while True:
         table.add_row("-a----", f"{str(date)}\t{str(time)}", "", file[1])
         console.print(table)
 
-    if command == commands[2]:
+    if command == commands[2] or "ll":
         listDir = os.listdir()
         for i in listDir:
             ifDir = os.path.isdir(i)
             if ifDir:
                 index = listDir.index(i)
-                listDir[index] = termcolor.colored(f"{listDir[index]}/", "green")
-            else:
-                console.print("unix: mkdir: file doesn't exist")
-        print("  ".join(listDir))
+                listDir[index] = f"{listDir[index]} (type ? --dir)"
+            else: listDir[listDir.index(i)] = f"{listDir[listDir.index(i)]} (type ? --file)"
 
+        print("\n".join(listDir),)
     if command.startswith("cat"):
         file = command.split()
         with open(file[1], "r") as f:
